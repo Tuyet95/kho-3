@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery UI Tabs - Default functionality</title>
+	<link rel="stylesheet" href="./css/jstyle.css">
+	<link rel="stylesheet" href="./css/jquery-ui.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/popup.css">
+	<!--JQuery nay khong chay duoc getToken-->
+	<!--<script src="./js/jquery-1.12.4.js"></script>-->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery-ui.js"></script>
+	<script src="./js/ok.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/tk.js"></script>
+	<script src="./js/popup.js"></script>
+</head>
+<body>
+ 
+<div id="tabs" style="width:680px;height:300px;">
+  <ul>
+    <li><a href="#tabs-1">Tài khoản</a></li>
+    <li class="tabs-2"><a href="#tabs-2">Quét Like, Fanpage, Group</a></li>
+	<li class="tabs-5"><a href="#tabs-5">Quét Comments</a></li>
+	<li class="tabs-4"><a href="#tabs-4">Convert UID</a></li>	
+    <li><a href="#tabs-3">Hướng dẫn</a></li>	
+  </ul>
+  <div id="tabs-1">
+    <div class="col-lg-12 show-login">                              
+		<div class="alert alert-danger error-login">                      
+		</div>                   
+		<div class="form-group">
+			<label>Tài khoản</label>
+			<input type="text" class="lg-pass form-control ip-email" placeholder="Tài khoản..." >
+		</div>
+		<div class="form-group">
+			<label>Mật khẩu</label>
+			<input type="password" class="lg-pass form-control ip-pass" placeholder="Mật khẩu..." >
+		</div>
+		<div class="form-group">
+			<button style="display:none" type="button" title="Kết nối tới cơ sở dữ liệu Facebook" class="btn btn-success btn-ketnoi">Kết nối</button>
+			<button type="button" class="btn btn-primary btn-login">Đăng Nhập</button>					
+		</div>
+	</div>
+	<div class="col-lg-12 show-home">  
+		<div class="form-group"><strong>Tài khoản :</strong> <span class="info-email">sdfsdf</span></div>
+		<div class="form-group "><strong>Hạn sử dụng : </strong><span class="info-hsd">23/01/2018</span></div>
+		<div class="form-group "><strong>Tải xuống : </strong>
+			<a target="_blank" style="color:blue" href="http://uid.facecrm.top/campaignAction.do?action=listPhones250">>>Tải xuống file Excel<<</a>
+		</div>				
+		<div class="form-group "><strong>Lưu ý : </strong>
+			Khi không quét ra kết quả, quý khách vui lòng nhấn vào kiểm tra lại hạn sử dụng phần mềm (<font color="blue"><i> nếu hết hạn vui lòng liên hệ với bên cung cấp dịch vụ</i></font>)
+		</div>
+		<!--
+		<div class="form-group form-group-findid" >
+			<input type="number" class="lg-pass form-control ip-phone" placeholder="Tìm theo số điện thoại..." >
+			<button class="btn btn-success btn-findid">Tìm Kiếm</button>
+		</div>
+		-->
+		<div class="alert alert-danger error-home">                      
+		</div>
+		<div class="form-group">
+			<button style="display:none" type="button" title="Kết nối tới cơ sở dữ liệu Facebook" class="btn btn-success btn-ketnoi">Kết nối</button>
+			<button type="button" class="btn btn-danger btn-logout">Đăng Xuất</button>
+		</div>
+	</div>
+  </div>
+  <div id="tabs-2">
+	<span style="color:#dd5044;font-weight:bold"><u>Lưu ý:</u> Tính năng này hiện chưa ÁP DỤNG cho phiên bản Facebook MỚI 2020!</span><br/>
+	<strong>Tính năng tự động quét UID</strong><br/>
+	- Hướng dẫn quét UID Likes bài viết <a href="https://www.youtube.com/watch?v=fEyIJ56arMA" target="_blank" style="color:blue">Tại đây</a> <br/>
+	- Hướng dẫn quét UID thành viên Group <a href="https://www.youtube.com/watch?v=vVOsCBKcvpM" target="_blank" style="color:blue">Tại đây</a> <br/>
+	- Hướng dẫn quét UID Likes Fanpage <a href="https://www.youtube.com/watch?v=CLJBC1UWhDY" target="_blank" style="color:blue">Tại đây</a> <br/>
+	  <fieldset>
+		<strong>Lựa chọn thao tác muốn quét: </strong></br>
+		<input type="radio" name="radio-1" id="radio-1"> &nbsp;Like bài viết&nbsp;&nbsp;&nbsp;&nbsp;		
+		<input type="radio" name="radio-1" id="radio-3"> &nbsp;Groups members&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="radio-1" id="radio-2"> &nbsp;Like Fanpage
+	  </fieldset>
+	<div class="form-group">
+		<strong><br/>Lưu ý</strong>: Nhấn <span style="color:red">STOP</span> trước khi tiến hành LỌC UID:</br>
+		<button type="button" class="btn btn-success btn-start">START</button>
+		<button type="button" class="btn btn-danger btn-stop">STOP</button>
+		<button type="button" class="btn btn-primary btn-filter">LỌC RA UID</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Trạng thái</b>: <img style="width:30px;height:30px" id="imgstart" src="/images/stop.gif"/>
+	</div>		
+	</div>
+  <div id="tabs-3">
+	<span style="font-weight:bold">Đầu tiên</span>. Tiến hành đăng nhập với tài khoản được cấp bởi quản trị hệ thống.<br/><br/>
+	<span style="font-weight:bold">Hoặc</span>. Xem video hướng dẫn cài đặt trên trình duyệt <a href="https://www.youtube.com/watch?v=e6OcgGLreYM" target="_blank" style="color:blue">Chrome</a>
+	&nbsp;hoặc&nbsp; <a href="https://www.youtube.com/watch?v=sY6iAx_MZ9Q" target="_blank" style="color:blue">Cốc Cốc</a>.<br/><br/>
+	<strong>Lưu ý : </strong>
+	Khi không quét ra kết quả, quý khách vui lòng kiểm tra lại hạn sử dụng phần mềm (<font color="blue"><i> nếu hết hạn vui lòng liên hệ với bên cung cấp dịch vụ</i></font>)
+  </div>
+  <div id="tabs-4">
+	<span style="color:#dd5044;font-weight:bold"><u>Lưu ý:</u> Tính năng này chỉ giành cho phiên bản PRO!</span><br/>
+	<iframe src="http://uid.facecrm.top/campaignAction.do?action=prepareConvert250&ver=3.0" scrolling="no" width="100%" height="230px" name=mainwindow frameborder=no framespacing=0 marginheight=0 marginwidth=0></iframe>
+    <textarea id="filteruid" rows="9" cols="70" style="display:none" ></textarea>
+	<button type="button" style="display:none" class="btn btn-success btn-uidname">LỌC UID & NAME</button>
+	<button type="button" style="display:none" class="btn btn-info btn-uid">LỌC UID</button>
+	<button type="button" style="display:none" class="btn btn-primary btn-uidphone">CHUYỂN UID->PHONEs</button>
+  </div>
+  <div id="tabs-5">
+    <span style="color:#dd5044;font-weight:bold"><u>Lưu ý:</u> Tính năng này chỉ giành cho phiên bản PRO!</span><br/>
+	Xem hướng dẫn quét Comments <a href="https://www.youtube.com/watch?v=z5wf1fosD2w" target="_blank" style="color:blue">Tại đây</a><br/>
+	<span style="color:red">Quét comment hàng loạt chỉ thử hiện được ở những POST trong Fanpage</span>
+	<div style="display:none">
+	<input type="checkbox" id="postingroup" name="postingroup" style="display:none"> Đây là bài trong GROUP <br>
+	</div>
+    <input type="text" class="lg-pass form-control" id="postid" value="" placeholder="POST ID" style="width:70% !important; display:inline"></input><br/>	
+	<label style="display:block;margin-bottom: 3px;" id="DivFbIdCurrent">
+		<input hidden type='text' id='CurrentFbId' value='' style="width: 120px;padding: 2px 2px 2px 5px;"/>
+	</label>
+	<textarea id="cookieResult" rows="5" style="width:100%;word-break: break-all;display:none"></textarea>
+	
+	<button type="button" id="btn-comment" class="btn btn-success btn-comment">QUÉT</button>&nbsp;<img style="width:30px;height:30px" id="imgcomment" src="/images/stop.gif"/>
+	<div id="lstcomment" style="overflow: auto;height:200px"></div>	
+  </div>
+</div>
+</body>
+</html>
